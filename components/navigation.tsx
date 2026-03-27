@@ -45,10 +45,7 @@ export default function Navigation() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-            ? "bg-white/90 backdrop-blur-lg shadow-lg py-2"
-            : "bg-transparent py-4"
-          }`}
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white/90 backdrop-blur-lg shadow-lg py-2"
       >
         <div className="container mx-auto px-4 md:px-6">
           <nav className={`flex items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
@@ -144,7 +141,7 @@ export default function Navigation() {
                 variant="ghost"
                 size="icon"
                 onClick={openCart}
-                className={`relative text-[#70b62b] ${isScrolled ? "" : "bg-black/20 backdrop-blur-md rounded-full"}`}
+                className="relative text-[#70b62b]"
               >
                 <ShoppingBag className="h-5 w-5" />
                 <AnimatePresence mode="wait">
@@ -165,7 +162,7 @@ export default function Navigation() {
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={`text-[#70b62b] ${isScrolled ? "" : "bg-black/20 backdrop-blur-md rounded-full"}`}
+                className="text-[#70b62b]"
               >
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />

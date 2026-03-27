@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
-import { ArrowRight, Leaf, Sparkles } from "lucide-react"
+import { ArrowRight, Leaf, Sparkles, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useRef, useState, useEffect } from "react"
 import Link from "next/link"
@@ -47,7 +47,7 @@ export default function HeroSection() {
     <section
       ref={ref}
       id="accueil"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-end justify-center pb-28 md:pb-40 overflow-hidden"
       style={{ position: "relative" }}
     >
       {/* Video Background */}
@@ -77,28 +77,6 @@ export default function HeroSection() {
       >
         <div className={`max-w-4xl mx-auto text-center ${isRTL ? 'font-arabic' : ''}`}>
 
-          {/* Main heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 [text-shadow:_0_2px_10px_rgb(0_0_0_/_40%)]"
-            style={{ fontFamily: 'var(--font-playfair)' }}
-          >
-            {t.hero.title1}{" "}
-            <span className="italic text-[#70b62b]">{t.hero.titleHighlight}</span>{" "}
-            {t.hero.title2}
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-medium"
-          >
-            {t.hero.phrase}
-          </motion.p>
-
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -106,24 +84,32 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className={`flex flex-col sm:flex-row items-center justify-center gap-6 ${isRTL ? 'sm:flex-row-reverse' : ''} mt-4`}
           >
-            <Link href="/produits" className="w-full sm:w-auto">
+            <Link href="/produits" className="w-auto">
               <Button
                 size="lg"
-                className="group bg-[#70b62b] hover:bg-[#066532] text-white px-10 py-7 text-lg rounded-full shadow-2xl transition-all duration-300 w-full"
+                className="group bg-[#70b62b] hover:bg-[#066532] text-white px-7 py-5 sm:px-10 sm:py-7 text-base sm:text-lg rounded-full shadow-2xl transition-all duration-300 w-auto"
               >
                 <span>{t.hero.cta1}</span>
                 <ArrowRight className={`h-5 w-5 group-hover:translate-x-1 transition-transform ${isRTL ? 'mr-2 rotate-180 group-hover:-translate-x-1' : 'ml-2'}`} />
               </Button>
             </Link>
-            <Link href="/a-propos" className="w-full sm:w-auto">
-              <Button
-                size="lg"
-                className="group bg-white text-[#066532] hover:bg-[#70b62b] hover:text-white px-10 py-7 text-lg rounded-full transition-all duration-300 font-bold shadow-xl w-full"
-              >
-                <Leaf className={`h-5 w-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
-                <span>{t.hero.cta2}</span>
-              </Button>
-            </Link>
+          </motion.div>
+
+          {/* Scroll Down Hint */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/40 pointer-events-none"
+          >
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="flex flex-col items-center gap-1"
+            >
+              <span className="text-[10px] uppercase tracking-[0.2em] font-medium mb-1">Explorer</span>
+              <ChevronDown className="h-4 w-4" />
+            </motion.div>
           </motion.div>
 
 
