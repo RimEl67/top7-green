@@ -399,20 +399,7 @@ export default function ProductsSection() {
                     {language === 'ar' ? product.descriptionAr : product.description}
                   </p>
 
-                  {/* Price */}
-                  <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <motion.span
-                      className="text-2xl font-bold text-[#066532]"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      {product.price} {language === 'ar' ? 'درهم' : 'DH'}
-                    </motion.span>
-                    {product.originalPrice && (
-                      <span className="text-sm text-[#254633]/40 line-through">
-                        {product.originalPrice} {language === 'ar' ? 'درهم' : 'DH'}
-                      </span>
-                    )}
-                  </div>
+
                 </div>
               </motion.div>
             ))}

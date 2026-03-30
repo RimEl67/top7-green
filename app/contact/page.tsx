@@ -25,6 +25,12 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    const msg = isAr 
+      ? `مرحباً، اسمي ${formData.name}.\nرقم هاتفي: ${formData.phone}\nرسالتي: ${formData.message}`
+      : `Bonjour, je m'appelle ${formData.name}.\nMon téléphone: ${formData.phone}\nMon message: ${formData.message}`;
+    
+    const encodedMsg = encodeURIComponent(msg);
+    window.open(`https://wa.me/212671013099?text=${encodedMsg}`, "_blank");
     setSubmitted(true)
   }
 
@@ -101,12 +107,7 @@ export default function ContactPage() {
                         placeholder="+212 6xx xxx xxx" />
                     </div>
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-[#254633] mb-2">{isAr ? 'البريد الإلكتروني *' : 'Email *'}</label>
-                    <input type="email" required value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})}
-                      className={`w-full px-4 py-3 rounded-xl border border-[#254633]/20 focus:outline-none focus:border-[#70b62b] focus:ring-2 focus:ring-[#70b62b]/20 transition-all text-[#254633] ${isRTL ? 'text-right' : ''}`}
-                      placeholder={isAr ? 'بريدك@example.com' : 'votre@email.com'} />
-                  </div>
+
                   <div>
                     <label className="block text-sm font-medium text-[#254633] mb-2">{isAr ? 'الرسالة *' : 'Message *'}</label>
                     <textarea required rows={5} value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}

@@ -346,27 +346,19 @@ export default function ProductModal() {
                   </span>
                 </motion.div>
 
-                {/* Price */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className={`flex items-center gap-4 mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}
-                >
-                  <span className="text-4xl font-bold text-[#066532]">
-                    {selectedProduct.price} {language === 'ar' ? 'درهم' : 'DH'}
-                  </span>
-                  {selectedProduct.originalPrice && (
-                    <span className="text-xl text-[#254633]/40 line-through">
-                      {selectedProduct.originalPrice} {language === 'ar' ? 'درهم' : 'DH'}
-                    </span>
-                  )}
-                  {selectedProduct.weight && (
+                {/* Weight */}
+                {selectedProduct.weight && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    className="mb-6"
+                  >
                     <span className="px-3 py-1 bg-[#f8f0da] rounded-full text-sm text-[#254633] font-sans">
                       {selectedProduct.weight}
                     </span>
-                  )}
-                </motion.div>
+                  </motion.div>
+                )}
 
                 {/* Description */}
                 <motion.p

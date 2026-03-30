@@ -441,20 +441,7 @@ export default function ProduitsPage() {
                   ))}
                 </div>
 
-                <div className="mt-12 pt-8 border-t border-[#254633]/10">
-                  <h3 className="font-bold text-[#254633] mb-4">{isAr ? "السعر" : "Prix"}</h3>
-                  <div className="space-y-2">
-                    <div className="h-1 bg-[#254633]/10 rounded-full relative">
-                      <div className="absolute inset-0 bg-[#70b62b] w-2/3 rounded-full" />
-                      <div className="absolute -top-1.5 left-0 w-4 h-4 bg-white border-2 border-[#70b62b] rounded-full shadow-md" />
-                      <div className="absolute -top-1.5 left-2/3 w-4 h-4 bg-white border-2 border-[#70b62b] rounded-full shadow-md" />
-                    </div>
-                    <div className="flex justify-between text-xs text-[#254633]/50 pt-4">
-                      <span>0 MAD</span>
-                      <span>500+ MAD</span>
-                    </div>
-                  </div>
-                </div>
+
               </div>
             </aside>
 
@@ -491,8 +478,6 @@ export default function ProduitsPage() {
                       className="bg-transparent text-sm font-bold text-[#254633] focus:outline-none cursor-pointer"
                     >
                       <option value="relevance">{isAr ? "الأكثر صلة" : "Pertinence"}</option>
-                      <option value="price-low">{isAr ? "السعر (منخفض)" : "Prix: Croissant"}</option>
-                      <option value="price-high">{isAr ? "السعر (مرتفع)" : "Prix: Décroissant"}</option>
                       <option value="rating">{isAr ? "التقييم" : "Mieux notés"}</option>
                     </select>
                   </div>
@@ -723,14 +708,7 @@ function ProductCard({
         </div>
 
         <div className={`flex items-end justify-between ${isRTL ? "flex-row-reverse" : ""}`}>
-          <div>
-            <div className="text-xl font-bold text-[#254633]">
-              {product.price} <span className="text-xs font-medium">MAD</span>
-            </div>
-            {product.originalPrice && (
-              <div className="text-xs text-[#254633]/30 line-through">{product.originalPrice} MAD</div>
-            )}
-          </div>
+
 
           {!isGrid && (
             <div className="flex gap-3">

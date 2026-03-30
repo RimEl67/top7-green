@@ -173,10 +173,7 @@ export default function CartDrawer() {
                               </motion.button>
                             </div>
 
-                            {/* Price */}
-                            <span className="font-bold text-[#066532]">
-                              {item.price * item.quantity} {language === 'ar' ? 'درهم' : 'DH'}
-                            </span>
+
                           </div>
                         </div>
                       </motion.div>
@@ -205,23 +202,10 @@ export default function CartDrawer() {
                 animate={{ opacity: 1, y: 0 }}
                 className={`p-6 border-t border-[#254633]/10 bg-white ${isRTL ? 'text-right' : ''}`}
               >
-                {/* Subtotal */}
-                <div className="space-y-2 mb-4">
-                  <div className={`flex items-center justify-between text-sm ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <span className="text-[#254633]/60">{t.subtotal}</span>
-                    <span className="text-[#254633]">{getTotalPrice()} {language === 'ar' ? 'درهم' : 'DH'}</span>
-                  </div>
-                  <div className={`flex items-center justify-between text-sm ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <span className="text-[#254633]/60">{t.shipping}</span>
-                    <span className="text-[#70b62b]">{t.free}</span>
-                  </div>
-                  <div className="h-px bg-[#254633]/10 my-2" />
-                  <div className={`flex items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <span className="font-bold text-[#254633]">{t.total}</span>
-                    <span className="text-2xl font-bold text-[#066532]">
-                      {getTotalPrice()} {language === 'ar' ? 'درهم' : 'DH'}
-                    </span>
-                  </div>
+                {/* Shipping */}
+                <div className={`flex items-center justify-between text-sm mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  <span className="text-[#254633]/60">{t.shipping}</span>
+                  <span className="text-[#70b62b] font-bold">{t.free}</span>
                 </div>
 
                 {/* Checkout button */}
@@ -232,7 +216,7 @@ export default function CartDrawer() {
 
                 {/* Trust message */}
                 <p className="text-center text-xs text-[#254633]/50 mt-4">
-                  {language === 'ar' ? 'دفع آمن - شحن مجاني ابتداءً من 200 درهم' : 'Paiement sécurisé - Livraison gratuite dès 200 DH'}
+                  {language === 'ar' ? 'طلب آمن - شحن مجاني' : 'Traitement sécurisé - Livraison gratuite'}
                 </p>
               </motion.div>
             )}
