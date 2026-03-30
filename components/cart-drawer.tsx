@@ -31,6 +31,19 @@ export default function CartDrawer() {
     clearCart,
   } = store
 
+  const handleCheckout = () => {
+    let msg = isRTL 
+      ? 'مرحباً، أود طلب المنتجات التالية:\n\n' 
+      : 'Bonjour, je voudrais commander les produits suivants :\n\n';
+    
+    items.forEach(item => {
+      msg += `- ${item.quantity}x ${isRTL ? (item.nameAr || item.name) : item.name}\n`;
+    });
+    
+    const encodedMsg = encodeURIComponent(msg);
+    window.open(`https://wa.me/212671013099?text=${encodedMsg}`, "_blank");
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -209,7 +222,10 @@ export default function CartDrawer() {
                 </div>
 
                 {/* Checkout button */}
-                <Button className={`w-full bg-[#066532] hover:bg-[#254633] text-white py-6 rounded-xl text-lg font-semibold shadow-xl shadow-[#066532]/25 group ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <Button 
+                  onClick={handleCheckout}
+                  className={`w-full bg-[#066532] hover:bg-[#254633] text-white py-6 rounded-xl text-lg font-semibold shadow-xl shadow-[#066532]/25 group ${isRTL ? 'flex-row-reverse' : ''}`}
+                >
                   <span>{t.checkout}</span>
                   {isRTL ? <ArrowLeft className="mr-2 h-5 w-5 group-hover:-translate-x-1 transition-transform" /> : <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />}
                 </Button>

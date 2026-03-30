@@ -47,7 +47,7 @@ export default function HeroSection() {
     <section
       ref={ref}
       id="accueil"
-      className="relative min-h-screen flex items-end justify-center pb-28 md:pb-40 overflow-hidden"
+      className="relative min-h-screen flex items-end justify-center pb-40 md:pb-56 overflow-hidden"
       style={{ position: "relative" }}
     >
       {/* Video Background */}
@@ -77,7 +77,16 @@ export default function HeroSection() {
       >
         <div className={`max-w-4xl mx-auto text-center ${isRTL ? 'font-arabic' : ''}`}>
 
-
+          {/* Title */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 md:whitespace-nowrap"
+            style={{ fontFamily: 'var(--font-playfair)' }}
+          >
+            <span className="text-[#70b62b]">{t.hero.titleHighlight}</span> {t.hero.title2}
+          </motion.h1>
 
           {/* Phrase */}
           <motion.p
