@@ -10,143 +10,110 @@ import { useCartStore, type Product } from "@/lib/cart-store"
 import { useLanguageStore, translations } from "@/lib/language-store"
 
 const products: Product[] = [
+
+
   {
-    id: 1,
-    name: "Sidr Premium",
-    nameAr: "سدر ممتاز",
-    description: "Poudre de feuilles de Sidr pure pour cheveux et peau",
-    descriptionAr: "مسحوق أوراق السدر النقي للشعر والبشرة",
-    longDescription: "Le Sidr, aussi connu sous le nom de jujubier, est un trésor ancestral utilisé depuis des millénaires dans la médecine traditionnelle. Notre poudre de Sidr premium est récoltée à la main dans les montagnes de l'Atlas marocain.",
-    price: 89,
-    originalPrice: 120,
-    image: "/images/products/sidr.jpg",
-    images: ["/images/products/sidr.jpg"],
-    rating: 4.9,
-    reviews: 128,
-    badge: "Best Seller",
-    badgeAr: "الأكثر مبيعاً",
-    badgeColor: "#70b62b",
-    category: "Plantes",
-    categoryAr: "نباتات",
-    benefits: ["Renforce les cheveux", "Purifie le cuir chevelu", "Anti-pelliculaire naturel", "Ajoute brillance et volume"],
-    usage: "Mélangez 2-3 cuillères à soupe avec de l'eau tiède pour former une pâte. Appliquez sur cheveux humides.",
-    ingredients: ["100% Poudre de feuilles de Sidr"],
-    weight: "200g"
-  },
-  {
-    id: 2,
-    name: "Romarin Séché",
-    nameAr: "إكليل الجبل مجفف",
-    description: "Romarin marocain de haute qualité pour infusions",
-    descriptionAr: "إكليل الجبل مغربي عالي الجودة للابتلاع",
-    longDescription: "Notre romarin est cultivé dans les terroirs les plus purs du Maroc. Séché naturellement au soleil.",
-    price: 45,
-    originalPrice: null,
-    image: "/images/products/romarin.jpg",
-    images: ["/images/products/romarin.jpg"],
-    rating: 4.8,
-    reviews: 96,
-    badge: "Nouveau",
-    badgeAr: "جديد",
-    badgeColor: "#066532",
-    category: "Plantes",
-    categoryAr: "نباتات",
-    benefits: ["Stimule la mémoire", "Favorise la digestion", "Antioxydant puissant", "Effet tonifiant"],
-    usage: "Infusez 1 cuillère à café dans 250ml d'eau bouillante pendant 10 minutes.",
-    ingredients: ["100% Romarin séché"],
-    weight: "100g"
-  },
-  {
-    id: 3,
-    name: "Huile d'Argan Pure",
-    nameAr: "زيت أرغان بكر",
-    description: "Huile d'argan bio pressée à froid",
-    descriptionAr: "زيت أرغان عضوي معصور على البارد",
-    longDescription: "L'or liquide du Maroc. Notre huile d'argan est extraite artisanalement par des coopératives de femmes berbères.",
-    price: 189,
-    originalPrice: 220,
-    image: "/images/products/argan-oil.jpg",
-    images: ["/images/products/argan-oil.jpg"],
-    rating: 5.0,
-    reviews: 234,
-    badge: "Premium",
-    badgeAr: "ممتاز",
-    badgeColor: "#254633",
-    category: "Huiles",
-    categoryAr: "زيوت",
-    benefits: ["Hydrate intensément", "Anti-âge naturel", "Répare les cheveux", "Renforce les ongles"],
-    usage: "Appliquez quelques gouttes sur peau propre matin et soir.",
-    ingredients: ["100% Huile d'argan vierge"],
-    weight: "100ml"
-  },
-  {
-    id: 4,
-    name: "Awlouz Traditionnel",
-    nameAr: "أملو تقليدي",
-    description: "Pâte d'amandes à l'argan artisanale",
-    descriptionAr: "عجينة اللوز بزيت الأركان التقليدية",
-    longDescription: "L'Amlou est une délicieuse pâte traditionnelle berbère à base d'amandes grillées.",
+    id: 24,
+    name: "Serum de Rose",
+    nameAr: "سيروم الورد",
+    description: "Serum de Rose",
+    descriptionAr: "سيروم الورد",
+    longDescription: "Serum de Rose",
     price: 75,
-    originalPrice: null,
-    image: "/images/products/awlouz.jpg",
-    images: ["/images/products/awlouz.jpg"],
+    originalPrice: 90,
+    image: "/images/SHOOTING Produits _/IMG_7301.JPG",
     rating: 4.7,
-    reviews: 87,
+    reviews: 24,
     badge: null,
-    badgeAr: null,
     badgeColor: null,
-    category: "Bien-être",
-    categoryAr: "صحة",
-    benefits: ["Riche en énergie", "Source d'oméga", "Délicieux au petit-déjeuner", "100% naturel"],
-    usage: "À tartiner sur du pain ou à déguster à la cuillère.",
-    ingredients: ["Amandes grillées", "Huile d'argan", "Miel naturel"],
-    weight: "250g"
+    category: "Cosmétiques Naturels",
+    categoryAr: "تجميل طبيعي",
   },
   {
-    id: 5,
-    name: "Savon Noir Beldi",
-    nameAr: "صابون بلدي مغربي",
-    description: "Savon noir traditionnel à l'huile d'olive",
-    descriptionAr: "صابون أسود تقليدي بزيت الزيتون",
-    longDescription: "Le savon noir beldi est l'incontournable du rituel hammam marocain.",
-    price: 55,
-    originalPrice: 70,
-    image: "/images/products/savon-noir.jpg",
-    images: ["/images/products/savon-noir.jpg"],
+    id: 25,
+    name: "Huile D'oliban",
+    nameAr: "زيت اللبان",
+    description: "Huile D'oliban",
+    descriptionAr: "زيت اللبان",
+    longDescription: "Huile D'oliban",
+    price: 210,
+    originalPrice: 250,
+    image: "/images/SHOOTING Produits _/IMG_7302.JPG",
     rating: 4.9,
-    reviews: 156,
-    badge: "-20%",
-    badgeAr: "-20%",
-    badgeColor: "#70b62b",
-    category: "Cosmétiques",
-    categoryAr: "تجميل",
-    benefits: ["Exfoliant naturel", "Nettoie en profondeur", "Prépare au gommage", "Peau douce et lisse"],
-    usage: "Appliquez généreusement sur peau humide, laissez poser 5-10 minutes.",
-    ingredients: ["Huile d'olive", "Olives noires macérées"],
-    weight: "200g"
+    reviews: 15,
+    badge: "Cadeau",
+    badgeColor: "#066532",
+    category: "Huiles Naturelles",
+    categoryAr: "زيوت طبيعية",
   },
   {
-    id: 6,
-    name: "Ghassoul Atlas",
-    nameAr: "غاسول الأطلس",
-    description: "Argile minérale pure des montagnes de l'Atlas",
-    descriptionAr: "طين معدني نقي من جبال الأطلس",
-    longDescription: "Le Ghassoul est une argile volcanique unique extraite des montagnes de l'Atlas.",
+    id: 26,
+    name: "Huile de Sider",
+    nameAr: "زيت السدر",
+    description: "Huile de Sider",
+    descriptionAr: "زيت السدر",
+    longDescription: "Huile de Sider",
     price: 65,
     originalPrice: null,
-    image: "/images/products/ghassoul.jpg",
-    images: ["/images/products/ghassoul.jpg"],
+    image: "/images/SHOOTING Produits _/IMG_7303.JPG",
     rating: 4.8,
-    reviews: 112,
-    badge: "Populaire",
-    badgeAr: "شائع",
-    badgeColor: "#066532",
-    category: "Cosmétiques",
-    categoryAr: "تجميل",
-    benefits: ["Purifie naturellement", "Absorbe l'excès de sébum", "Adoucit les cheveux", "Convient peaux sensibles"],
-    usage: "Mélangez avec de l'eau tiède ou de l'eau de rose pour former une pâte.",
-    ingredients: ["100% Ghassoul pur"],
-    weight: "250g"
+    reviews: 37,
+    badge: null,
+    badgeColor: null,
+    category: "Huiles Naturelles",
+    categoryAr: "زيوت طبيعية",
+  },
+  {
+    id: 27,
+    name: "Vinaigre de cidre de pomme",
+    nameAr: "خل التفاح",
+    description: "Vinaigre de cidre de pomme",
+    descriptionAr: "خل التفاح",
+    longDescription: "Vinaigre de cidre de pomme",
+    price: 45,
+    originalPrice: null,
+    image: "/images/SHOOTING Produits _/IMG_7304.JPG",
+    rating: 4.7,
+    reviews: 82,
+    badge: "Love",
+    badgeColor: "#70b62b",
+    category: "Produits Alimentaires",
+    categoryAr: "منتجات غذائية",
+  },
+
+  {
+    id: 29,
+    name: "Huile d'argan torrifiee",
+    nameAr: "زيت أركان محمص",
+    description: "Huile d'argan torrifiee",
+    descriptionAr: "زيت أركان محمص",
+    longDescription: "Huile d'argan torrifiee",
+    price: 95,
+    originalPrice: 120,
+    image: "/images/SHOOTING Produits _/IMG_7306.JPG",
+    rating: 4.9,
+    reviews: 26,
+    badge: "Healthy",
+    badgeColor: "#70b62b",
+    category: "Huiles Naturelles",
+    categoryAr: "زيوت طبيعية",
+  },
+  {
+    id: 23,
+    name: "Miel des Herbes",
+    nameAr: "عسل الأعشاب",
+    description: "Miel des Herbes",
+    descriptionAr: "عسل الأعشاب",
+    longDescription: "Miel des Herbes",
+    price: 35,
+    originalPrice: null,
+    image: "/images/SHOOTING Produits _/IMG_7300.JPG",
+    rating: 4.8,
+    reviews: 62,
+    badge: "Craft",
+    badgeColor: "#70b62b",
+    category: "Produits Alimentaires",
+    categoryAr: "منتجات غذائية",
   },
 ]
 
@@ -162,10 +129,10 @@ export default function ProductsSection() {
 
   const filters = [
     { label: t.all, value: "Tous" },
-    { label: language === 'ar' ? "نباتات" : "Plantes", value: "Plantes" },
-    { label: language === 'ar' ? "تجميل" : "Cosmétiques", value: "Cosmétiques" },
-    { label: language === 'ar' ? "زيوت" : "Huiles", value: "Huiles" },
-    { label: language === 'ar' ? "صحة" : "Bien-être", value: "Bien-être" },
+    { label: language === 'ar' ? "السدر" : "Sidr", value: "Sidr" },
+    { label: language === 'ar' ? "زيوت طبيعية" : "Huiles Naturelles", value: "Huiles Naturelles" },
+    { label: language === 'ar' ? "تجميل طبيعي" : "Cosmétiques Naturels", value: "Cosmétiques Naturels" },
+    { label: language === 'ar' ? "منتجات تقليدية" : "Produits Traditionnels", value: "Produits Traditionnels" },
   ]
 
   const { scrollYProgress } = useScroll({
@@ -251,8 +218,8 @@ export default function ProductsSection() {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveFilter(filter.value)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeFilter === filter.value
-                    ? "bg-[#066532] text-white shadow-lg shadow-[#066532]/25"
-                    : "bg-white text-[#254633] hover:bg-[#70b62b]/10 border border-[#254633]/10"
+                  ? "bg-[#066532] text-white shadow-lg shadow-[#066532]/25"
+                  : "bg-white text-[#254633] hover:bg-[#70b62b]/10 border border-[#254633]/10"
                   }`}
               >
                 {filter.label}
@@ -293,7 +260,7 @@ export default function ProductsSection() {
                     alt={language === 'ar' ? product.nameAr || product.name : product.name}
                     fill
                     priority={index < 3}
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-cover transition-transform duration-700 scale-110 group-hover:scale-125"
                   />
 
                   {/* Overlay gradient on hover */}
@@ -370,8 +337,8 @@ export default function ProductsSection() {
                         <Star
                           key={i}
                           className={`h-4 w-4 ${i < Math.floor(product.rating)
-                              ? "fill-[#70b62b] text-[#70b62b]"
-                              : "fill-gray-200 text-gray-200"
+                            ? "fill-[#70b62b] text-[#70b62b]"
+                            : "fill-gray-200 text-gray-200"
                             }`}
                         />
                       ))}
@@ -384,20 +351,11 @@ export default function ProductsSection() {
                     </span>
                   </div>
 
-                  {/* Name */}
                   <div className={`flex items-center gap-2 mb-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                     <h3 className="text-lg font-bold text-[#254633] group-hover:text-[#066532] transition-colors">
                       {language === 'ar' ? product.nameAr : product.name}
                     </h3>
-                    <span className="text-sm text-[#70b62b] font-medium font-sans">
-                      {language === 'ar' ? product.name : product.nameAr}
-                    </span>
                   </div>
-
-                  {/* Description */}
-                  <p className="text-sm text-[#254633]/60 mb-4 line-clamp-2">
-                    {language === 'ar' ? product.descriptionAr : product.description}
-                  </p>
 
 
                 </div>

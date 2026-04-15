@@ -11,7 +11,7 @@ export default function CategoriesSection() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
   const { language, isRTL } = useLanguageStore()
   const t = translations[language].categories
-  
+
   const categories = [
     {
       id: 1,
@@ -68,18 +68,18 @@ export default function CategoriesSection() {
       style={{ position: "relative" }}
     >
       {/* Animated background decoration */}
-      <motion.div 
+      <motion.div
         style={{ y: y1 }}
-        className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#f8f0da]/30 to-transparent" 
+        className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#f8f0da]/30 to-transparent"
       />
-      <motion.div 
+      <motion.div
         style={{ y: y2 }}
-        className="absolute bottom-0 left-0 w-96 h-96 bg-[#70b62b]/5 rounded-full blur-3xl" 
+        className="absolute bottom-0 left-0 w-96 h-96 bg-[#70b62b]/5 rounded-full blur-3xl"
       />
-      
+
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Section header */}
-        <motion.div 
+        <motion.div
           style={{ scale }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
@@ -124,8 +124,8 @@ export default function CategoriesSection() {
               key={category.id}
               initial={{ opacity: 0, y: 80, rotateX: 15 }}
               animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 delay: 0.15 * index,
                 type: "spring",
                 stiffness: 100
@@ -147,17 +147,17 @@ export default function CategoriesSection() {
                     className="object-cover"
                   />
                 </motion.div>
-                
+
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#254633]/90 via-[#254633]/30 to-transparent" />
-                
+
                 {/* Animated border */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                   className="absolute inset-0 border-2 border-[#70b62b] rounded-2xl"
                 />
-                
+
                 {/* Content */}
                 <div className="absolute inset-0 p-6 flex flex-col justify-end">
                   {/* Icon */}
@@ -167,21 +167,21 @@ export default function CategoriesSection() {
                   >
                     <category.icon className="h-6 w-6 text-white" />
                   </motion.div>
-                  
+
                   {/* Text */}
-                  <motion.h3 
+                  <motion.h3
                     className={`text-xl font-bold text-white mb-2 group-hover:text-[#70b62b] transition-colors duration-300 ${isRTL ? 'text-right' : ''}`}
                   >
                     {category.title}
                   </motion.h3>
-                  <motion.p 
+                  <motion.p
                     initial={{ opacity: 0.7 }}
                     whileHover={{ opacity: 1 }}
                     className={`text-white/70 text-sm mb-3 line-clamp-2 group-hover:text-white transition-colors ${isRTL ? 'text-right' : ''}`}
                   >
                     {category.description}
                   </motion.p>
-                  
+
                   {/* Footer */}
                   <div className={`flex items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
                     <span className="text-xs text-white/60 font-medium group-hover:text-white/80 transition-colors">
