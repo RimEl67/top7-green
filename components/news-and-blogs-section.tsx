@@ -11,7 +11,7 @@ const blogs = [
   {
     id: 1,
     slug: "guide-ultime-peau-eclatante",
-    image: "/images/products/argan-new.jpg",
+    image: "/images/products/IMG_7295.jpg",
     category: "Soin de la peau",
     categoryAr: "العناية بالبشرة",
     author: "Khadija Idrissi",
@@ -100,7 +100,7 @@ export default function NewsAndBlogsSection() {
 
           <div className={`grid md:grid-cols-3 gap-8 ${isRTL ? 'direction-rtl' : ''}`}>
             {blogs.map((blog, idx) => (
-              <motion.div 
+              <motion.div
                 key={blog.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -110,29 +110,29 @@ export default function NewsAndBlogsSection() {
                 onClick={() => setSelectedBlog(blog)}
               >
                 <div className="block relative aspect-[4/3] rounded-3xl overflow-hidden mb-6 bg-gray-100">
-                  <Image 
-                     src={blog.image} 
-                     alt={language === 'ar' ? blog.titleAr : blog.title} 
-                     fill 
-                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  <Image
+                    src={blog.image}
+                    alt={language === 'ar' ? blog.titleAr : blog.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className={`absolute bottom-4 ${isRTL ? 'right-4' : 'left-4'} bg-[#70b62b] text-white text-xs font-bold px-3 py-1.5 rounded-md tracking-wider shadow-md`}>
                     {language === 'ar' ? blog.categoryAr : blog.category}
                   </div>
                 </div>
-                
+
                 <div className={`flex items-center gap-2 text-xs text-[#70b62b] mb-4 font-bold tracking-wide ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <span>{language === 'ar' ? blog.authorAr : blog.author}</span>
                   <span className="text-xl leading-none font-black text-[#254633]">•</span>
                   <span className="text-gray-500 font-medium">{language === 'ar' ? blog.dateAr : blog.date}</span>
                 </div>
-                
+
                 <h3 className={`text-xl md:text-2xl font-bold text-[#254633] mb-4 font-serif leading-snug group-hover:text-[#70b62b] transition-colors flex-1 ${isRTL ? 'text-right' : ''}`}>
                   {language === 'ar' ? blog.titleAr : blog.title}
                 </h3>
-                
+
                 <div className={`mt-auto pt-2 ${isRTL ? 'text-right' : ''}`}>
-                  <span 
+                  <span
                     className={`text-[#70b62b] font-bold text-sm hover:text-[#066532] transition-colors flex items-center gap-2 uppercase tracking-wide ${isRTL ? 'flex-row-reverse' : ''}`}
                   >
                     {t.readMore}
@@ -189,11 +189,11 @@ export default function NewsAndBlogsSection() {
                     <Tag className="h-3.5 w-3.5" />
                     {language === 'ar' ? selectedBlog.categoryAr : selectedBlog.category}
                   </div>
-                  
+
                   <h1 className="text-3xl md:text-5xl font-bold text-[#254633] mb-6 font-serif leading-tight">
                     {language === 'ar' ? selectedBlog.titleAr : selectedBlog.title}
                   </h1>
-                  
+
                   <div className={`flex flex-wrap items-center gap-6 text-gray-500 font-medium pb-6 border-b border-gray-200 text-sm md:text-base ${isRTL ? 'flex-row-reverse' : ''}`}>
                     <div className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                       <User className="h-4 w-4 md:h-5 md:w-5 text-[#70b62b]" />
@@ -224,10 +224,10 @@ export default function NewsAndBlogsSection() {
                       {paragraph}
                     </p>
                   ))}
-                  
+
                   {/* Bottom close button */}
                   <div className="mt-12 pt-8 border-t border-gray-200 flex justify-center">
-                     <button
+                    <button
                       onClick={() => setSelectedBlog(null)}
                       className={`inline-flex items-center justify-center gap-3 px-8 py-3 md:px-10 md:py-4 bg-[#254633] hover:bg-[#70b62b] text-white font-bold rounded-full transition-all shadow-xl shadow-[#066532]/20 text-base md:text-lg tracking-wide group ${isRTL ? 'flex-row-reverse' : ''}`}
                     >

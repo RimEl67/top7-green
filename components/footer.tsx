@@ -13,7 +13,7 @@ export default function Footer() {
     <footer id="contact" className={`bg-[#254633] text-white/90 tracking-wide ${isRTL ? 'font-arabic' : 'font-sans'}`}>
       <div className="container mx-auto px-6 md:px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-          
+
           {/* Column 1: Brand */}
           <div className="flex flex-col items-start max-w-sm">
             <Link href="/" className="mb-8">
@@ -49,10 +49,10 @@ export default function Footer() {
               <h4 className="text-[11px] font-bold tracking-[0.2em] text-white/40 uppercase mb-8">Contact</h4>
               <ul className="space-y-4 text-sm font-medium mb-8">
                 <li>+212 671 013 099</li>
-                <li>contact@top7green.ma</li>
+                <li>topsevengreen@gmail.com </li>
                 <li>Agadir — Maroc</li>
               </ul>
-              
+
               <div className="md:flex md:justify-end">
                 <a
                   href="https://wa.me/212671013099"

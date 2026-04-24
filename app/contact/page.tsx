@@ -18,17 +18,17 @@ export default function ContactPage() {
 
   const contactCards = [
     { icon: Phone, titleFr: "Téléphone", titleAr: "الهاتف", value: "+212 671 013 099", subFr: "Lundi – Samedi, 9h–19h", subAr: "الإثنين – السبت، 9ص–7م", href: "tel:+212671013099", bg: "#70b62b" },
-    { icon: Mail, titleFr: "Email", titleAr: "البريد الإلكتروني", value: "top7green@gmail.com", subFr: "Réponse sous 24h", subAr: "رد خلال 24 ساعة", href: "mailto:top7green@gmail.com", bg: "#254633" },
+    { icon: Mail, titleFr: "Email", titleAr: "البريد الإلكتروني", value: "topsevengreen@gmail.com ", subFr: "Réponse sous 24h", subAr: "رد خلال 24 ساعة", href: "mailto:topsevengreen@gmail.com ", bg: "#254633" },
     { icon: MapPin, titleFr: "Adresse", titleAr: "العنوان", value: "Agadir, Maroc", subFr: "Livraison dans tout le Maroc", subAr: "التوصيل في جميع أنحاء المغرب", href: "https://maps.google.com/?q=Agadir,Maroc", bg: "#066532" },
     { icon: Clock, titleFr: "Horaires", titleAr: "ساعات العمل", value: "9h – 19h", subFr: "Lundi au Samedi", subAr: "الإثنين إلى السبت", href: null, bg: "#70b62b" },
   ]
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const msg = isAr 
+    const msg = isAr
       ? `مرحباً، اسمي ${formData.name}.\nرقم هاتفي: ${formData.phone}\nرسالتي: ${formData.message}`
       : `Bonjour, je m'appelle ${formData.name}.\nMon téléphone: ${formData.phone}\nMon message: ${formData.message}`;
-    
+
     const encodedMsg = encodeURIComponent(msg);
     window.open(`https://wa.me/212671013099?text=${encodedMsg}`, "_blank");
     setSubmitted(true)
@@ -96,13 +96,13 @@ export default function ContactPage() {
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-medium text-[#254633] mb-2">{isAr ? 'الاسم الكامل *' : 'Nom complet *'}</label>
-                      <input type="text" required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})}
+                      <input type="text" required value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })}
                         className={`w-full px-4 py-3 rounded-xl border border-[#254633]/20 focus:outline-none focus:border-[#70b62b] focus:ring-2 focus:ring-[#70b62b]/20 transition-all text-[#254633] ${isRTL ? 'text-right' : ''}`}
                         placeholder={isAr ? 'اسمك' : 'Votre nom'} />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-[#254633] mb-2">{isAr ? 'الهاتف' : 'Téléphone'}</label>
-                      <input type="tel" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})}
+                      <input type="tel" value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })}
                         className={`w-full px-4 py-3 rounded-xl border border-[#254633]/20 focus:outline-none focus:border-[#70b62b] focus:ring-2 focus:ring-[#70b62b]/20 transition-all text-[#254633] ${isRTL ? 'text-right' : ''}`}
                         placeholder="+212 6xx xxx xxx" />
                     </div>
@@ -110,7 +110,7 @@ export default function ContactPage() {
 
                   <div>
                     <label className="block text-sm font-medium text-[#254633] mb-2">{isAr ? 'الرسالة *' : 'Message *'}</label>
-                    <textarea required rows={5} value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}
+                    <textarea required rows={5} value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })}
                       className={`w-full px-4 py-3 rounded-xl border border-[#254633]/20 focus:outline-none focus:border-[#70b62b] focus:ring-2 focus:ring-[#70b62b]/20 transition-all text-[#254633] resize-none ${isRTL ? 'text-right' : ''}`}
                       placeholder={isAr ? 'كيف يمكننا مساعدتك؟' : 'Comment pouvons-nous vous aider ?'} />
                   </div>
