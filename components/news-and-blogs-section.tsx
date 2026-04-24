@@ -11,7 +11,7 @@ const blogs = [
   {
     id: 1,
     slug: "guide-ultime-peau-eclatante",
-    image: "/images/products/IMG_7295.jpg",
+    image: "/images/SHOOTING Produits _/IMG_7295.JPG",
     category: "Soin de la peau",
     categoryAr: "العناية بالبشرة",
     author: "Khadija Idrissi",
