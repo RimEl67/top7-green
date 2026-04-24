@@ -26,7 +26,7 @@ export default function CategoriesSection() {
       id: 2,
       title: t.cosmetics.title,
       description: t.cosmetics.description,
-      image: "/images/SHOOTING Produits _/IMG_7295.JPG",
+      image: "/images/products/IMG_7295.JPG",
       icon: Sparkles,
       count: language === 'ar' ? "+٣٨ منتج" : "38+ Produits",
       color: "#066532",
